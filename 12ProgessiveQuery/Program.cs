@@ -43,17 +43,17 @@ namespace _11ProgessiveQuery
             //de select o group. Es como si reinciara el query permitiendo
             //otros where, orderby, select
 
-            IEnumerable<string> encotrados = from p in postres
+            IEnumerable<string> encontrados = from p in postres
                                              where p.Contains("fresas")
                                              orderby p
                                              select p
                                              into crema
                                              where crema.Contains("crema")
                                              select crema;
-
-            foreach (string postre in encotrados)
+            foreach (string postre in encontrados)
                 Console.WriteLine(postre);//trae todas las fresas con crema
             Console.WriteLine("---------- Wrapping");
+
             //Envolver Queries -wrapping
             //Es otra opcion de como podemos trabajar con el query
             //no confundir esta tecnica con los subqueries que colocan
