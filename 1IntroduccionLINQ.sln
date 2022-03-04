@@ -21,7 +21,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "8FluentSintax", "8FluentSin
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "9OtherOperators", "9OtherOperators\9OtherOperators.csproj", "{BC2944EB-B477-4FD3-AD26-3878E20169AA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "10SubQuery", "10SubQuery\10SubQuery.csproj", "{D6998480-C78E-4AAE-BBF2-06227CEE526D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "10SubQuery", "10SubQuery\10SubQuery.csproj", "{D6998480-C78E-4AAE-BBF2-06227CEE526D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "11ProgessiveQuery", "12ProgessiveQuery\11ProgessiveQuery.csproj", "{37DFF253-44B4-4D7C-B873-26614995149E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -69,6 +71,10 @@ Global
 		{D6998480-C78E-4AAE-BBF2-06227CEE526D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D6998480-C78E-4AAE-BBF2-06227CEE526D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D6998480-C78E-4AAE-BBF2-06227CEE526D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{37DFF253-44B4-4D7C-B873-26614995149E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37DFF253-44B4-4D7C-B873-26614995149E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37DFF253-44B4-4D7C-B873-26614995149E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37DFF253-44B4-4D7C-B873-26614995149E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
