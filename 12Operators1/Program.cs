@@ -85,9 +85,28 @@ namespace _12Operators1
                 Console.WriteLine(s);
             Console.WriteLine("---------");
 
+            //TakeWhile emite elementos de la secuencia de entrada hasta que
+            //- el predicado es falso
+            Console.WriteLine("----FILTROS => TAKEWHILE----\r\n");
+
+            int[] numeros = { 1, 2, 4, 3, 63, 645, 85, 3, 11, 7, 9, 9, 9 };
+
+            var r4 = numeros.TakeWhile(n => n < 8);
+            foreach (int s in r4)
+                Console.WriteLine(s);
+            Console.WriteLine("---------");
+
+            //SkipWhile Ignora elementos de la secuencia de entrada hasta que el-
+            //-predicado es falso, luego emite el resto sin tener en cuenta
+            //-la condicion porque esta solo es valida una vez
+            Console.WriteLine("----FILTROS => SKIPWHILE----\r\n");
+            var r5 = numeros.SkipWhile(n => n < 8);
+            foreach (int s in r5)
+                Console.WriteLine(s);
+            Console.WriteLine("---------");
+
 
             
-
         }
     }
 }
