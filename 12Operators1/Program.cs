@@ -106,7 +106,32 @@ namespace _12Operators1
             Console.WriteLine("---------");
 
 
-            
+            ///////////////////////////////////////////////////////////
+            //Proyeccion
+            //Select transforma el elemento de entrada con la expresion
+            //lambda
+            //SelectMany transforma el elemento, lo aplana y concatena con los
+            //subsecuencias resultantes
+
+            //Hemos usado Select con tipos anonimos o para tomar el elemento
+            //completamente
+
+            Console.WriteLine("----PROYECCION => INDEXADA----\r\n");
+            IEnumerable<string> r6 = postres.Select((p, i) =>
+                $"Indice {i+1} para el postre {p}");
+            foreach (string s in r6)
+                Console.WriteLine(s);
+            Console.WriteLine("---------");
+
+            //SelectMany
+            //En Select cada elemento de entrada produce un elemento de salida
+            //SelectMany produce 0...n elementos
+
+            Console.WriteLine("----PROYECCION => SELECTMANY----\r\n");
+            IEnumerable<string> r7 = postres.SelectMany(p => p.Split());
+            foreach (string s in r7)
+                Console.WriteLine(s);
+            Console.WriteLine("---------");
         }
     }
 }
