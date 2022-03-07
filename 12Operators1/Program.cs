@@ -126,12 +126,15 @@ namespace _12Operators1
             //SelectMany
             //En Select cada elemento de entrada produce un elemento de salida
             //SelectMany produce 0...n elementos
-
+            //Sencillamente: Select da un arreglo de palabras por cada oracion
+            //y SelectMany da palabra por palabra, es decir aplana todo
             Console.WriteLine("----PROYECCION => SELECTMANY----\r\n");
             IEnumerable<string> r7 = postres.SelectMany(p => p.Split());
             foreach (string s in r7)
                 Console.WriteLine(s);
             Console.WriteLine("---------");
+
+            
         }
     }
 }
