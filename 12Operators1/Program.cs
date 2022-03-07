@@ -133,6 +133,18 @@ namespace _12Operators1
             foreach (string s in r7)
                 Console.WriteLine(s);
             Console.WriteLine("---------");
+            
+            Console.WriteLine("----PROYECCION => SELECT----\r\n");
+            Console.WriteLine("Para ver la diferencia con SelectMany");
+            IEnumerable<string[]> r8 = postres.Select(p => p.Split());
+            foreach (string[] s in r8)
+            {
+                Console.WriteLine("-");
+                foreach(string t in s)
+                    Console.WriteLine(t);
+            }
+                
+            Console.WriteLine("---------");
 
             
         }
