@@ -142,10 +142,20 @@ namespace _12Operators1
                 Console.WriteLine("-");
                 foreach(string t in s)
                     Console.WriteLine(t);
-            }
-                
+            }                
             Console.WriteLine("---------");
 
+            Console.WriteLine("----PROYECCION => SELECT----\r\n");
+            Console.WriteLine("Select con multiples variables de rango");
+            IEnumerable<string> r9 = from p in postres
+                                       from p1 in p.Split()
+                                       select p1 + "====>" + p;
+            foreach(string n in r9)
+                Console.WriteLine(n);
+            
+            Console.WriteLine("---------");
+
+            //7:28
             
         }
     }
