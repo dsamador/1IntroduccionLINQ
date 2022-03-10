@@ -155,8 +155,44 @@ namespace _12Operators1
             
             Console.WriteLine("---------");
 
-            //7:28
-            
+            // Union-Joining
+            // Join une los elementos de dos colecciones en un solo conjunto
+            // GroupJoin es como Join pero da un resultado jerarquico
+            // Zip Enumera dos secuencias y aplica una funcion a cada par
+
+            List<Estudiante> estudiantes = new List<Estudiante>()
+            {
+                new Estudiante("Ana", 100),
+                new Estudiante("Mario", 150),
+                new Estudiante("Camilo", 180)
+            };
+
+            List<Clase> clases = new List<Clase>
+            {
+                new Clase("Programacion", 100),
+                new Clase("Orientado a objetos", 150),
+                new Clase("Programacion", 150),
+                new Clase("Programacion", 180),
+                new Clase("UML", 100),
+                new Clase("Orientado a objetos", 100),
+                new Clase("UML", 180),
+            };
+
+            Console.WriteLine("----FILTROS => UNION----\r\n");
+
+            //Esto funciona y no usamos Join
+            //var listado = from e in estudiantes
+            //              from c in clases
+            //              where c.Id == e.Id
+            //              select e.Nombre + " esta en el curso " + c.Curso;
+
+            var listado = from e in estudiantes
+                          join c in clases on e.Id equals c.Id
+                          select e.Nombre + " esta en el curso " + c.Curso;
+
+            //Mostramos los resultados
+            foreach (var item in listado)
+                Console.WriteLine(item);
         }
     }
 }
