@@ -252,7 +252,37 @@ namespace _12Operators1
                 Console.WriteLine(item);
 
             Console.WriteLine("------------");
-            //16
+            //////////////////////////////////////////////////////////
+            // Agrupamiento
+            // GroupBy agrupa una secuencia en subsecuencias
+
+            Console.WriteLine("----AGRUPAMIENTO => GROUPBY----\r\n");
+
+            string[] archivos = System.IO.Directory.GetFiles("H:\\amade\\Documents");
+
+            Console.WriteLine("Archivos obtenidos por GetFiles");
+
+            foreach (string archivo in archivos)
+                Console.WriteLine(archivo);
+
+            //Agrupamos basados en la extension
+            //Adentro de () colocamos el criterio de agrupamiento
+
+            var archivoAg = archivos.GroupBy(x => System.IO.Path.GetExtension(x));
+
+            Console.WriteLine("Resultados agrupados");
+
+            foreach (IGrouping<string, string> g in archivoAg)
+            {
+                //llave de agrupamiento
+                Console.WriteLine($"Archivos de extension {g.Key}");
+                foreach (string item in g)
+                {
+                    Console.WriteLine($"\t {item}");
+                }
+            }
+
+            Console.WriteLine("---------");
         }
     }
 }
