@@ -323,6 +323,44 @@ namespace _12Operators1
             int primeroNo = numeros.FirstOrDefault(n => n % 57 == 0);
             Console.WriteLine(primeroNo);
 
+
+            ////////////////////////////////////////
+            //Agregacion
+            //Count LongCount Regresa la cantidad de elementos en la secuencia int o int64
+            //Min Regresa el elemento menor de la secuencia
+            //Max Regresa el elemento mayor de la secuencia
+            //Sum Regresa la sumatoria de los elementos
+            //Average Regresa el promedio de los elementos
+            //Aggregate Hace una agregacion usando nuestro algoritmo
+
+            Console.WriteLine("----DE AGREGACION => SUM----\r\n");
+
+            int sumatoria = numeros.Sum();
+            Console.WriteLine(sumatoria);
+
+
+            Console.WriteLine("----DE AGREGACION => AGGREGATE----\r\n");
+            int[] numeros2 = { 1, 2, 3, 4, 5, 6, 7 };
+
+            //En este caso la semilla es cero, si no se pone la semilla, toma el primer valor
+            int agregado = numeros2.Aggregate(0, (t,n)=> t + (n * 2));
+            Console.WriteLine(agregado);
+
+            /////////////////////////////////////
+            //Cuantificadores
+            //Contains Regresa true si la secuencia contiene al elemento
+            //Any Regresa true si un elemento satisface al predicado
+            //All Regresa true si todos los elementos satisfacen al predicado
+            //SequenceEqual Regresa true si la segunda secuencia tiene elementos identicos a la de entrada
+
+            Console.WriteLine("----CUANTIFICADORES => ALL----\r\n");
+
+            bool todos = numeros2.All(n => n < 10);
+            Console.WriteLine(todos);
+
+            Console.WriteLine("----CUANTIFICADORES => SEQUENCE_EQUAL----\r\n");
+            bool iguales = numeros2.SequenceEqual(numeros);
+            Console.WriteLine(iguales);
         }
     }
 }
