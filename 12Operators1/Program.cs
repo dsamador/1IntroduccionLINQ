@@ -361,6 +361,29 @@ namespace _12Operators1
             Console.WriteLine("----CUANTIFICADORES => SEQUENCE_EQUAL----\r\n");
             bool iguales = numeros2.SequenceEqual(numeros);
             Console.WriteLine(iguales);
+
+            /////////////////////////////////////////////////////
+            ///Generacion
+            ///Empty crea una secuencia vacia
+            ///Repeat crea una secuencia de elementos que se repiten
+            ///Range crea una secuencia de enteros
+            ///
+
+            var vacia = Enumerable.Empty<int>();//se puede hacer cw pero no tiene nada
+
+            Console.WriteLine("----------------");
+
+            var repetir = Enumerable.Repeat("Hola", 5);//Hola  cinco veces
+
+            Console.WriteLine("----------------");
+
+            Console.WriteLine("----GENERACION => RANGE----\r\n");
+            var rango = Enumerable.Range(5, 15);//Inicio, elementos
+
+            foreach (var item in rango)
+            {
+                Console.WriteLine(item);
+            }
         }
     }
 }
