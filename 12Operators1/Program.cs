@@ -283,6 +283,46 @@ namespace _12Operators1
             }
 
             Console.WriteLine("---------");
+
+            //////////////////////////////////////////////////////////
+            // Conjuntos
+            // Concat, Union, Intersect, Except
+            //////////////////////////////////////////////////////////
+
+            //Conversion
+            //OfType Convierte de IEnumerable a IEnumerable<T>, desecha los elementos erroneos
+            //Cast Convierte de IEnumerable a IEnumerable<T>, lanza excepcion con los elementos erroneos
+            //ToArray Convierte de IEnumerable<T> a T[]
+            //ToList Convierte de IEnumerable<T> a List[]
+            //ToDictionary IEnumerable<T> a Dictionary<TKey, TValue>
+            //ToLookup Convierte de IEnumerable<T> a Lookup<TKey, TElement>
+            //AsEnumerable Hace downcast a IEnumerable<T>
+            //AsQueryable Hace cast o convierte a IQueryable<T>
+
+            //////////////
+            // De elemento
+            // First, FirstOrDefault Regresa primer elemento de la secuencia
+            // Last, LastOrDefault Regresa ultimo elemento de la secuencia
+            // Single, SingleOrDefault Equivalente a First, FirstOrDefault, pero lanza una
+            //  excepcion si hay mas de un elemento
+            // ElementAt, ElementAtOrDefault
+            // DefaultEmpty
+
+            Console.WriteLine("----DE ELEMENTO => FIRST----\r\n");
+            //obtenemos el primero
+            int primero = numeros.First();
+            Console.WriteLine(primero);
+
+            Console.WriteLine("----DE ELEMENTO => FIRST con condicion----\r\n");
+            //Primer par
+            int primerPar = numeros.First(n => n % 2 == 0);
+            Console.WriteLine(primerPar);
+
+            Console.WriteLine("----DE ELEMENTO => FIRSTORDEFAULT----\r\n");
+            //Primer divisible por 57
+            int primeroNo = numeros.FirstOrDefault(n => n % 57 == 0);
+            Console.WriteLine(primeroNo);
+
         }
     }
 }
