@@ -178,7 +178,7 @@ namespace _12Operators1
                 new Clase("UML", 180),
             };
 
-            Console.WriteLine("----FILTROS => UNION----\r\n");
+            Console.WriteLine("----UNION => JOIN----\r\n");
 
             //Esto funciona y no usamos Join
             //var listado = from e in estudiantes
@@ -189,10 +189,70 @@ namespace _12Operators1
             var listado = from e in estudiantes
                           join c in clases on e.Id equals c.Id
                           select e.Nombre + " esta en el curso " + c.Curso;
-
-            //Mostramos los resultados
+            
             foreach (var item in listado)
                 Console.WriteLine(item);
+            Console.WriteLine("---------");
+
+
+            // Los resultados se obtienen en forma gerarquica
+            // la sintaxis es la misma per utilizamos into
+            Console.WriteLine("----UNION => GROUP JOIN----\r\n");
+            var listado2 = from e in estudiantes
+                           join c in clases on e.Id equals c.Id
+                           into tempListado
+                           select new { estudiante = e.Nombre, tempListado };
+
+            //Mostramos los resultados
+            foreach (var item in listado2)
+            {//creamos una coleccion de clases por cada estudiante
+                Console.WriteLine(item.estudiante);
+                foreach (var item2 in item.tempListado)
+                {
+                    Console.WriteLine(item2);
+                }
+            }
+            Console.WriteLine("---------");
+
+
+            //ZIP 
+            // Regresa una secuencia que aplica una funcion a cada par
+            Console.WriteLine("----UNION => ZIP----\r\n");
+            string[] helados = { "chocolate", "vainilla", "fresa", "limon" };
+
+            IEnumerable<string> r12 = postres.Zip(helados, (p, h) => p + " con helado de " + h);
+
+            foreach (var item in r12)
+            {
+                Console.WriteLine(item);
+            }
+
+            // Ordenamiento 
+            // OrderBy, ThenBy, Ordena en orden ascendente
+            // OrderByDescending, ThenByDescending Ordena de orden descendente
+            // Reverse Regresa en el orden inverso
+
+            Console.WriteLine("----ORDENAMIENTO => ORDERBY----\r\n");
+            IEnumerable<int> numOrder = numeros.OrderBy(x => x); //escendente
+            IEnumerable<int> numDes = numeros.OrderByDescending(x => x); //descendente
+
+            foreach (var item in numOrder)            
+                Console.WriteLine(item);
+
+            foreach (var item in numDes)            
+                Console.WriteLine(item);
+
+            Console.WriteLine("------------");
+
+            string[] palabras = { "hola", "piedra", "pato", "pastel", "carros", "auto" };
+            //con cadenas, ordena primero por longitud y luego por orden alfabetico
+            IEnumerable<string> palabrasOrdenadas = palabras.OrderBy(x => x.Length).ThenBy(p => p);
+
+            foreach (var item in palabrasOrdenadas)
+                Console.WriteLine(item);
+
+            Console.WriteLine("------------");
+            //16
         }
     }
 }
