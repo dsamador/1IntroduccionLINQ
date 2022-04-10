@@ -25,7 +25,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "10SubQuery", "10SubQuery\10
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "11ProgessiveQuery", "12ProgessiveQuery\11ProgessiveQuery.csproj", "{37DFF253-44B4-4D7C-B873-26614995149E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "12Operators1", "12Operators1\12Operators1.csproj", "{ECC73F0F-B4CF-4D55-A18A-35D5F568E477}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "12Operators1", "12Operators1\12Operators1.csproj", "{ECC73F0F-B4CF-4D55-A18A-35D5F568E477}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
